@@ -1,9 +1,8 @@
 package com.core.consultreasons.controller;
 
 import java.util.List;
-
 import com.core.consultreasons.model.ResponseModel;
-import com.core.consultreasons.model.TypeReason;
+import com.core.consultreasons.model.TypeReasonResponse;
 import com.core.consultreasons.service.TypeReasonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +20,7 @@ public class TypeReasonController {
     private TypeReasonServiceImpl typeReasonRepository;
 
     @GetMapping("find-reasons")
-    public ResponseEntity<ResponseModel<List<TypeReason>>> findTypeReasons() {
+    public ResponseEntity<ResponseModel<List<TypeReasonResponse>>> findTypeReasons() {
         return new ResponseEntity<>(typeReasonRepository.find(), HttpStatus.OK);
     }
 

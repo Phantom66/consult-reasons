@@ -2,7 +2,7 @@ package com.core.consultreasons.service;
 
 import java.util.List;
 import com.core.consultreasons.model.ResponseModel;
-import com.core.consultreasons.model.TypeReason;
+import com.core.consultreasons.model.TypeReasonResponse;
 import com.core.consultreasons.presenter.TypeReasonPresenter;
 import com.core.consultreasons.repository.TypeReasonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class TypeReasonServiceImpl implements TypeReasonService {
     private TypeReasonPresenter typeReasonPresenter;
 
     @Override
-    public ResponseModel<List<TypeReason>> find() {
+    public ResponseModel<List<TypeReasonResponse>> find() {
         log.info("Service ...");
         typeReasonRepository.findAll().stream().forEach(System.out::println);
         return typeReasonPresenter.setResponse(typeReasonRepository.findAll());
